@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
@@ -22,32 +23,19 @@ export function Navbar({
   const [activeIdx, setActiveIdx] = useState<number>(0);
 
   const tabs = [
-    {
-      path: "/",
-      title: "home",
-    },
-    {
-      path: "/aboutme",
-      title: "Sobre mim",
-    },
-    {
-      path: "/projects",
-      title: "projectos",
-    },
-    {
-      path: "/tecnologies",
-      title: "tecnologias",
-    },
-    // {
-    //   path: "/blog",
-    //   title: "blog",
-    // },
-    {
-      path: "/talktome",
-      title: "talk to me",
-    },
+    { path: "/", title: "home" },
+    { path: "/aboutme", title: "sobre mim" },
+    { path: "/projects", title: "projectos" },
+    { path: "/tecnologies", title: "tecnologias" },
+    { path: "/talktome", title: "talk to me" },
   ];
 
+  useEffect(() => {
+    const savedIndex = localStorage.getItem("activeTabIndex");
+    if (savedIndex !== null) {
+      setActiveIdx(Number(savedIndex));
+    }
+  }, []);
   return (
     <div
       className={cn(
@@ -59,7 +47,10 @@ export function Navbar({
         <Link
           key={tab.title}
           href={tab.path}
-          onClick={() => setActiveIdx(index)}
+          onClick={() => {
+            setActiveIdx(index);
+            localStorage.setItem("activeTabIndex", index.toString());
+          }}
           className={cn(
             "group relative z-[1] rounded-full px-4 py-2",
             { "z-0": activeIdx === index },

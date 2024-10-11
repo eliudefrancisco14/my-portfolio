@@ -1,3 +1,12 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 export default function Page() {
   return (
     <section>
@@ -5,6 +14,19 @@ export default function Page() {
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
           Tecnologias
         </h1>
+        <div className="mt-5 flex items-center">
+          <Card>
+            <CardContent>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg"
+                alt="PHP Logo"
+                width="64"
+                height="64"
+                />
+            </CardContent>
+          </Card>
+          
+        </div>
         <p className="mb-4">
           <ul>
             <li>1. JavaScript</li>

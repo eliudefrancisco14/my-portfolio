@@ -5,9 +5,9 @@ export default function Page() {
     <section>
       <div className="mt-5 flex items-center">
        
-        <Avatar>
+        <Avatar className="w-32 h-32">
           <AvatarImage src="https://github.com/eliudefrancisco14.png" />
-          <AvatarFallback>EF</AvatarFallback>
+          <AvatarFallback className="text-black">EF</AvatarFallback>
         </Avatar>
 
         <h4 className="mb-0 ml-4 text-2xl font-semibold tracking-tighter">

@@ -1,3 +1,13 @@
+import ArrowIcon from "@/components/ArrowIcon";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 export default function Page() {
   return (
     <section>
@@ -5,6 +15,28 @@ export default function Page() {
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
           Meu Projectos
         </h1>
+        <div className="mt-5 flex items-center">
+          <Card>
+            <CardHeader>
+              <CardTitle>Angofuel</CardTitle>
+              <CardDescription>
+                Sistema de Geolocalização de Postos de Combustíveis
+              </CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <a
+                className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="#"
+              >
+                <ArrowIcon />
+                <p className="ml-2 h-7">Link do Projecto</p>
+              </a>
+            </CardFooter>
+          </Card>
+        </div>
+
         <p className="mb-4">
           <ul>
             <li>1. Angofuel </li>

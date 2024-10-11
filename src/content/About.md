@@ -1,10 +1,36 @@
-import ArrowIcon from "@/components/ArrowIcon";
+# Sobre mim
 
-export default function Page() {
-  return (
-    <section>
-      <div className="section-1 mt-5">
-        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+
+
+Sou o Eliúde Paulo Quintas Francisco, desenvolvedor de sistemas e plataformas. Sou um amante da tecnologia, gosto de criar soluções com a tecnologia e sou fascinado em resolver os problemas dos outros que envolvem tecnologia como se fossem meus problemas.
+
+Sou desenvolvedor BackEnd e dedicado a lógica dos meus produtos, entretanto, também trabalho muito bem com o front, modelando e criando uma interface agradável e que atenda aos requisitos que sejam solicitados. 
+
+Os meus hobbyes são:
+
+1. Design Gráfico
+2. Leitura
+3. Trading - Investimento no mercado financeiro
+4. Ouvir Músicas e Instrumentais
+5. Meditar
+6. Estudar um pouco sobre outras áreas.
+
+
+
+> Seja Bem-vindo ao meu portfólio! Aqui eu chamo de "**Meu planeta🌍**". 
+>
+
+Aqui você encontrará uma coleção de projetos que desenvolvi ao longo dos anos, e algumas tecnologias que utilizo para o desenvolvimento de soluções.
+
+Sinta-se a vontade para explorar cada canto do meu planeta. 🌍
+
+
+
+Em HTML
+
+
+
+<h1 className="mb-8 text-2xl font-semibold tracking-tighter">
           About me
         </h1>
         <p className="mb-4">
@@ -38,7 +64,7 @@ export default function Page() {
         <p className="mb-4">
           {`Sinta-se a vontade para explorar cada canto do meu planeta. 🌍`}
         </p>
-      </div>
+​      </div>
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
@@ -107,35 +133,3 @@ export default function Page() {
           </a>
         </li>
       </ul>
-    </section>
-  );
-}
-
-// With MDX
-
-// import { serialize } from 'next-mdx-remote/serialize';
-// import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-// import fs from 'fs';
-// import path from 'path';
-// import MdxRenderer from '@/components/MDXRendered';
-
-// async function getMdxContent(): Promise<MDXRemoteSerializeResult> {
-//   const filePath = path.join(process.cwd(), 'src/content/about.mdx');
-//   const source = fs.readFileSync(filePath, 'utf8');
-//   const mdxSource = await serialize(source);
-//   return mdxSource;
-// }
-
-// const Page = async () => {
-//   const mdxSource = await getMdxContent();
-
-//   return (
-//     <section>
-//       <div className="section-1 mt-5">
-//         <MdxRenderer mdxSource={mdxSource} />
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Page;
