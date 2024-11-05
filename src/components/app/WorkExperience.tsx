@@ -10,7 +10,7 @@ interface WorkExperienceData {
 const WorkExperienceData: WorkExperienceData[] = [
   {
     startDate: "Setembro 2023",
-    endDate: "Present",
+    endDate: "Presente",
     companyName: "INOKRI",
     jobTitle: "BackEnd Developer | CTO",
     description: ["Com uma visão futurista e detalhada, trabalhei na interface de projectos diversos apresentando assim as melhores soluções para a UI dos projectos. "],

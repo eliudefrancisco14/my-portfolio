@@ -10,7 +10,7 @@ interface EducationData {
 const educationData: EducationData[] = [
   {
     startDate: "Setembro 2023",
-    endDate: "Present",
+    endDate: "Presente",
     collegeName: "INSTIC - Instituto Superior de Tecnologias de Informação e Comunicação",
     courseName: "Engehnaria de Informática",
     address: "Luanda, Angola",
