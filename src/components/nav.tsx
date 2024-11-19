@@ -8,6 +8,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 type AnimatedTabsProps = {
   containerClassName?: string;
@@ -36,6 +38,7 @@ export function Navbar({
       setActiveIdx(Number(savedIndex));
     }
   }, []);
+  const { resolvedTheme, setTheme } = useTheme();
   return (
     <div
       className={cn(
@@ -62,7 +65,7 @@ export function Navbar({
               layoutId="clicked-button"
               transition={{ duration: 0.2 }}
               className={cn(
-                "absolute inset-0 rounded-full bg-white",
+                "absolute inset-0 rounded-full bg-gray-900",
                 activeTabClassName
               )}
             />
@@ -71,13 +74,20 @@ export function Navbar({
           <span
             className={cn(
               "relative text-sm block font-medium duration-200",
-              activeIdx === index ? "text-black delay-100" : "text-white"
+              activeIdx === index ? "text-white delay-100" : "text-black"
             )}
           >
             {tab.title}
           </span>
         </Link>
       ))}
+      {/* <div className="size-12 rounded-full flex items-center justify-center">
+        {resolvedTheme === "dark" ? (
+          <Sun className="w-5 h-5 cursor-pointer" onClick={() => setTheme("light")}/>
+        ) : (
+          <Moon className="w-5 h-5 cursor-pointer" onClick={() => setTheme("light")}/>
+        )}
+      </div> */}
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 
-const BlackHoleBackground: React.FC = () => {
+const BlackHoleBackgroundDark: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const BlackHoleBackground: React.FC = () => {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = "rgba(0,0,0," + this.opacity + ")";
+        ctx.fillStyle = "rgba(255,255,255," + this.opacity + ")";
         ctx.beginPath();
         ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();
@@ -86,7 +86,7 @@ const BlackHoleBackground: React.FC = () => {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = "rgba(240,240,240,1)";
+        ctx.fillStyle = "rgba(0,0,0,1)";
         ctx.beginPath();
         ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();
@@ -120,4 +120,4 @@ const BlackHoleBackground: React.FC = () => {
   return <canvas ref={canvasRef} id="particle" style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }} />;
 };
 
-export default BlackHoleBackground;
+export default BlackHoleBackgroundDark;
