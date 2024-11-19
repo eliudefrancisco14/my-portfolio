@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 
 type ProjectData = {
@@ -5,22 +6,25 @@ type ProjectData = {
   description: string;
   link: string;
   code?: string;
+  nocode: boolean;
   tecnologies: string[];
 };
 
 const projects: ProjectData[] = [
   {
-    title: "Project 1",
-    description: "Description for project 1",
-    link: "http://example.com/project1",
-    code: "http://example.com/project1",
-    tecnologies: ["Laravel", "PHP", "Node.js", "Express.js"],
+    title: "Angofuel",
+    description: "Sistemas de Geolocalização de Postos de Combustíveis.",
+    link: "#",
+    code: "#",
+    nocode: false,
+    tecnologies: ["Laravel", "PHP", "MySQL", "Google Maps"],
   },
   {
     title: "Project 2",
     description: "Description for project 2",
-    link: "http://example.com/project2",
-    code: "http://example.com/project2",
+    link: "#",
+    code: "#",
+    nocode: true,
     tecnologies: ["Laravel", "PHP", "Node.js", "Express.js"],
   },
   {
@@ -28,6 +32,7 @@ const projects: ProjectData[] = [
     description: "Description for project 3",
     link: "http://example.com/project3",
     code: "http://example.com/project3",
+    nocode: false,
     tecnologies: ["Laravel", "PHP", "Node.js", "Express.js"],
   },
 ];
@@ -48,15 +53,14 @@ const Projects = () => (
               alt=""
             />
           </a>
-          <div className="flex flex-col gap-2 p-4 text-center">
+          <div className="flex flex-col gap-2 p-4 text-justify">
             <a href="#">
               <h5 className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
+                {project.title}
               </h5>
             </a>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
+              {project.description}
             </p>
             <div className="flex flex-wrap gap-2 p-2">
               {project.tecnologies.map((skill, index) => (
@@ -68,9 +72,19 @@ const Projects = () => (
                 </div>
               ))}
             </div>
+            <hr />
             <div className="flex gap-2 mt-2">
-              <Button variant="default">View</Button>
-              <Button variant="outline" className="text-gray-500">Code</Button>
+              {project.nocode ? (
+                <Link href={project?.link ?? "#"} target="_blank">
+                  <Button variant="outline" className="text-gray-500">
+                    Code
+                  </Button>
+                </Link>
+              ) : null}
+
+              <Link href={project?.code ?? "#"} target="_blank">
+                <Button variant="default">View</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -80,4 +94,3 @@ const Projects = () => (
 );
 
 export default Projects;
-

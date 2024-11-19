@@ -33,13 +33,13 @@ const Education = () => {
           {educationData.map((item, index) => (
             <li className="mb-10 ms-4">
               <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-              <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <time className="mb-1 text-sm font-normal leading-none text-gray-600 dark:text-gray-500">
                 {item.startDate} - {item.endDate}
               </time>
-              <h3 className="text-lg font-semibold text-gray-200 dark:text-white">
-                {item.courseName} at {item?.collegeName || item?.schoolName}
+              <h3 className="text-lg font-semibold text-gray-600 dark:text-white">
+                {item.courseName} | {item?.collegeName || item?.schoolName}
               </h3>
-              <p className="mb-4 text-base font-normal text-gray-700 dark:text-gray-400">
+              <p className="mb-4 text-base font-normal text-gray-800 dark:text-gray-400">
                 {item.address}
               </p>
             </li>

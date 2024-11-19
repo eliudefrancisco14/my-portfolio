@@ -4,6 +4,7 @@ import "./globals.css";
 import BlackHoleBackground from "@/components/BlackHoleBackground";
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
+import Providers from "./providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -77,18 +78,18 @@ export default function RootLayout({
     <html
       lang="pt"
       className={cx(
-        "text-white bg-black",
+        "text-base font-sans",
         geistSans.variable,
         geistMono.variable
       )}
     >
       <body
-        className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto text-white bg-transparent "
+        className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto"
       >
         <BlackHoleBackground />
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
-          <div className="mt-10">{children}</div>
+          <Providers>{children}</Providers>
           <Footer />
           {/* <Analytics />
           <SpeedInsights /> */}
