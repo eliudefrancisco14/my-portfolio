@@ -8,6 +8,7 @@ type ProjectData = {
   link: string;
   code?: string;
   nocode: boolean;
+  noview: boolean;
   tecnologies: string[];
 };
 
@@ -19,7 +20,8 @@ const projects: ProjectData[] = [
     link: "#",
     code: "#",
     nocode: false,
-    tecnologies: ["Laravel", "MySQL", "Google Maps"],
+    noview: false,
+    tecnologies: ["Laravel", "Bootstrap", "MySQL", "Google Maps"],
   },
   {
     title: "Assistente Hospitalar",
@@ -28,17 +30,19 @@ const projects: ProjectData[] = [
     cover: "/project/assistente-hospitalar.jpg",
     link: "#",
     code: "#",
-    nocode: true,
-    tecnologies: ["Laravel", "SQL"],
+    nocode: false,
+    noview: false,
+    tecnologies: ["Laravel", "Bootstrap", "MySQL",],
   },
   {
-    title: "Project 3",
-    description: "Description for project 3",
-    cover: "",
-    link: "http://example.com/project3",
-    code: "http://example.com/project3",
+    title: "School Management",
+    description: "O SGE é um sistema de gestão escolar desenvolvido durante o meu estágio no INFOSI.",
+    cover: "/project/schoolmanagement.png",
+    link: "#",
+    code: "#",
     nocode: false,
-    tecnologies: ["Laravel", "PHP", "Node.js", "Express.js"],
+    noview: false,
+    tecnologies: ["Laravel", "Bootstrap", "MySQL"],
   },
 ];
 
@@ -84,9 +88,11 @@ const Projects = () => (
                 </Link>
               ) : null}
 
-              <Link href={project?.code ?? "#"} target="_blank">
-                <Button variant="default">View</Button>
-              </Link>
+              {project.noview ? (
+                <Link href={project?.code ?? "#"} target="_blank">
+                  <Button variant="default">View</Button>
+                </Link>
+              ) : null}
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ const TalkToMe = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState([]);
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -27,9 +28,15 @@ const TalkToMe = () => {
       }),
     });
 
-    const { msg } = await res.json();
+    const { msg, success } = await res.json();
     setError(msg);
-    console.log(error);
+    setSuccess(success);
+
+    if (success) {
+      setFullname("");
+      setEmail("");
+      setMessage("");
+    }
   };
 
   return (
@@ -69,13 +76,28 @@ const TalkToMe = () => {
           >
             {message}
           </textarea>
-          <button onSubmit={(e) => {e.preventDefault}} className="p-2 bg-gray-800 text-white rounded-md">
+          <button
+            onSubmit={(e) => {
+              e.preventDefault;
+            }}
+            className="p-2 bg-gray-800 text-white rounded-md"
+          >
             Enviar
           </button>
         </div>
       </form>
       <div className="bg-slate-100 flex flex-col">
-        <div className="text-red-600 px-5 py-2">Error Message</div>
+        {error &&
+          error.map((e, index) => (
+            <div
+              key={index}
+              className={`${
+                success ? "text-green-800" : "text-red-600"
+              } px-5 py-2`}
+            >
+              {e}
+            </div>
+          ))}
       </div>
     </div>
   );

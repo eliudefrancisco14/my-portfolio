@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-const contactSchema = new Schema({
+const TalkToMeSchema = new Schema({
     fullname: {
         type: String,
         required: [true, "Name is required."],
@@ -26,7 +26,7 @@ const contactSchema = new Schema({
     },
 });
 
-const Contact =
-    mongoose.models.Contact || mongoose.model("Contact", contactSchema);
+const TalkToMe =
+    mongoose.models.TalkToMe || mongoose.model("TalkToMe", TalkToMeSchema);
 
-export default Contact;
+export default TalkToMe;

@@ -1,5 +1,5 @@
 import connectDB from "@/lib/mongodb";
-import TalkToMe from "@/models/talktome";
+import TalkToMe from "@/models/TalkToMe";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
