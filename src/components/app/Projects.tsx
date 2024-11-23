@@ -4,9 +4,11 @@ import { Button } from "../ui/button";
 type ProjectData = {
   title: string;
   description: string;
+  cover: string;
   link: string;
   code?: string;
   nocode: boolean;
+  noview: boolean;
   tecnologies: string[];
 };
 
@@ -14,26 +16,33 @@ const projects: ProjectData[] = [
   {
     title: "Angofuel",
     description: "Sistemas de Geolocalização de Postos de Combustíveis.",
+    cover: "/project/angofuel.png",
     link: "#",
     code: "#",
     nocode: false,
-    tecnologies: ["Laravel", "PHP", "MySQL", "Google Maps"],
+    noview: false,
+    tecnologies: ["Laravel", "Bootstrap", "MySQL", "Google Maps"],
   },
   {
-    title: "Project 2",
-    description: "Description for project 2",
+    title: "Assistente Hospitalar",
+    description:
+      "O Assistente Hospitalar é uma plataforma de consulta online, que apresenta dados do paciente com probabilidade de alguma doença com um relatório.",
+    cover: "/project/assistente-hospitalar.jpg",
     link: "#",
     code: "#",
-    nocode: true,
-    tecnologies: ["Laravel", "PHP", "Node.js", "Express.js"],
+    nocode: false,
+    noview: false,
+    tecnologies: ["Laravel", "Bootstrap", "MySQL",],
   },
   {
-    title: "Project 3",
-    description: "Description for project 3",
-    link: "http://example.com/project3",
-    code: "http://example.com/project3",
+    title: "School Management",
+    description: "O SGE é um sistema de gestão escolar desenvolvido durante o meu estágio no INFOSI.",
+    cover: "/project/schoolmanagement.png",
+    link: "#",
+    code: "#",
     nocode: false,
-    tecnologies: ["Laravel", "PHP", "Node.js", "Express.js"],
+    noview: false,
+    tecnologies: ["Laravel", "Bootstrap", "MySQL"],
   },
 ];
 
@@ -46,19 +55,16 @@ const Projects = () => (
           key={index}
           className="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
         >
-          <a href="#">
-            <img
-              className="rounded-t-lg w-100 h-100"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </a>
+          <img
+            className="rounded-t-lg w-100 h-100"
+            src={project.cover}
+            alt=""
+          />
           <div className="flex flex-col gap-2 p-4 text-justify">
-            <a href="#">
-              <h5 className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
-                {project.title}
-              </h5>
-            </a>
+            <h5 className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
+              {project.title}
+            </h5>
+
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
               {project.description}
             </p>
@@ -82,9 +88,11 @@ const Projects = () => (
                 </Link>
               ) : null}
 
-              <Link href={project?.code ?? "#"} target="_blank">
-                <Button variant="default">View</Button>
-              </Link>
+              {project.noview ? (
+                <Link href={project?.code ?? "#"} target="_blank">
+                  <Button variant="default">View</Button>
+                </Link>
+              ) : null}
             </div>
           </div>
         </div>

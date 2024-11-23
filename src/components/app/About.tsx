@@ -1,4 +1,11 @@
-import ArrowIcon from "../ArrowIcon";
+const albumData: string[] = [
+  "/profile-large.jpg",
+  "/gallery/ARTES/Arte1.jpg",
+  "/gallery/ITEL/fititel.jpg",
+  "/gallery/ITEL/outorga.jpg",
+  "/gallery/INOKRI/contratando.jpg",
+  "/perfil.jpg",
+];
 
 const About = () => {
   return (
@@ -24,48 +31,15 @@ const About = () => {
       <div className="my-5 p-2">
         <h1 className="text-2xl font-bold my-4">Galeria</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              className="h-auto max-w-full rounded-lg"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </div>
+          {albumData.map((album, index) => (
+            <div key={index}>
+              <img
+                className="h-auto max-w-full rounded-lg"
+                src={album}
+                alt={index.toString()}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -80,9 +54,6 @@ const About = () => {
       <p className="mb-4 text-justify">
         {`Sinta-se a vontade para explorar cada canto do meu planeta. 🌍`}
       </p>
-
-      
-      
     </div>
   );
 };

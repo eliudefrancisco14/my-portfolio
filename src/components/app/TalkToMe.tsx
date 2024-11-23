@@ -1,7 +1,44 @@
-import Link from "next/link";
-import ArrowIcon from "../ArrowIcon";
+"use client";
+
+import { AwardIcon } from "lucide-react";
+import { useState } from "react";
 
 const TalkToMe = () => {
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState([]);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Full Name: ", fullname);
+    console.log("Email: ", email);
+    console.log("Message: ", message);
+
+    const res = await fetch("api/talktome", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        fullname,
+        email,
+        message,
+      }),
+    });
+
+    const { msg, success } = await res.json();
+    setError(msg);
+    setSuccess(success);
+
+    if (success) {
+      setFullname("");
+      setEmail("");
+      setMessage("");
+    }
+  };
+
   return (
     <div className="section-1 mt-5">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
@@ -12,98 +49,56 @@ const TalkToMe = () => {
         meu portfólio, ou talvez queiras saber mais sobre mim, deixa o seu
         <b> talk to me</b>
       </p>
-      <div className="flex flex-col gap-4">
-        <input
-          type="text"
-          placeholder="Nome"
-          className="p-2 border rounded-md border-gray-200 dark:border-gray-700"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="p-2 border rounded-md border-gray-200 dark:border-gray-700"
-        />
-        <textarea
-          placeholder="Mensagem"
-          className="p-2 border rounded-md border-gray-200 dark:border-gray-700 resize-none"
-          minLength={10}
-          maxLength={255}
-          rows={5}
-        ></textarea>
-        <button className="p-2 bg-gray-800 text-white rounded-md">
-          Enviar
-        </button>
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-4 my-2">
+          <input
+            onChange={(e) => setFullname(e.target.value)}
+            value={fullname}
+            type="text"
+            placeholder="Nome"
+            className="p-2 border rounded-md border-gray-200 dark:border-gray-700"
+          />
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            type="email"
+            placeholder="Email"
+            className="p-2 border rounded-md border-gray-200 dark:border-gray-700"
+          />
+
+          <textarea
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Mensagem"
+            className="p-2 border rounded-md border-gray-200 dark:border-gray-700 resize-none"
+            minLength={10}
+            maxLength={255}
+            rows={5}
+          >
+            {message}
+          </textarea>
+          <button
+            onSubmit={(e) => {
+              e.preventDefault;
+            }}
+            className="p-2 bg-gray-800 text-white rounded-md"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+      <div className="bg-slate-100 flex flex-col">
+        {error &&
+          error.map((e, index) => (
+            <div
+              key={index}
+              className={`${
+                success ? "text-green-800" : "text-red-600"
+              } px-5 py-2`}
+            >
+              {e}
+            </div>
+          ))}
       </div>
-      <ul className="font-sm mt-10 flex flex-col space-x-0 space-y-2 text-neutral-900 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <Link
-            href={"https://github.com/eliudefrancisco14"}
-            className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">github</p>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={"https://linkedin.com/in/eliude-quintas-francisco-7b2347252"}
-            className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">linkedin</p>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={
-              "https://instagram.com/eliudepauloquintas/profilecard/?igsh=MWNodzRia20yc244bA=="
-            }
-            className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">instagram</p>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={"https://facebook.com"}
-            className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">facebook</p>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={"https://x.com"}
-            className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">X</p>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={"https://threads.net/@eliudepauloquintas?invite=0"}
-            className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">threads</p>
-          </Link>
-        </li>
-      </ul>
     </div>
   );
 };

@@ -28,7 +28,6 @@ export function Navbar({
     { path: "/", title: "home" },
     { path: "/aboutme", title: "sobre mim" },
     { path: "/projects", title: "projectos" },
-    { path: "/tecnologies", title: "tecnologias" },
     { path: "/talktome", title: "talk to me" },
   ];
 
