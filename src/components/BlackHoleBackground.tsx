@@ -49,7 +49,7 @@ const BlackHoleBackground: React.FC = () => {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = "rgba(0,0,0," + this.opacity + ")";
+        ctx.fillStyle = "rgba(100,100,100," + this.opacity + ")";
         ctx.beginPath();
         ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();
@@ -86,7 +86,7 @@ const BlackHoleBackground: React.FC = () => {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = "rgba(240,240,240,1)";
+        ctx.fillStyle = "rgba(250,250,250,1)";
         ctx.beginPath();
         ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();

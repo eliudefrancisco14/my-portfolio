@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 type ProjectData = {
   title: string;
   description: string;
+  cover: string;
   link: string;
   code?: string;
   nocode: boolean;
@@ -14,22 +15,26 @@ const projects: ProjectData[] = [
   {
     title: "Angofuel",
     description: "Sistemas de Geolocalização de Postos de Combustíveis.",
+    cover: "/project/angofuel.png",
     link: "#",
     code: "#",
     nocode: false,
-    tecnologies: ["Laravel", "PHP", "MySQL", "Google Maps"],
+    tecnologies: ["Laravel", "MySQL", "Google Maps"],
   },
   {
-    title: "Project 2",
-    description: "Description for project 2",
+    title: "Assistente Hospitalar",
+    description:
+      "O Assistente Hospitalar é uma plataforma de consulta online, que apresenta dados do paciente com probabilidade de alguma doença com um relatório.",
+    cover: "/project/assistente-hospitalar.jpg",
     link: "#",
     code: "#",
     nocode: true,
-    tecnologies: ["Laravel", "PHP", "Node.js", "Express.js"],
+    tecnologies: ["Laravel", "SQL"],
   },
   {
     title: "Project 3",
     description: "Description for project 3",
+    cover: "",
     link: "http://example.com/project3",
     code: "http://example.com/project3",
     nocode: false,
@@ -46,19 +51,16 @@ const Projects = () => (
           key={index}
           className="flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
         >
-          <a href="#">
-            <img
-              className="rounded-t-lg w-100 h-100"
-              src="/profile-large.jpg"
-              alt=""
-            />
-          </a>
+          <img
+            className="rounded-t-lg w-100 h-100"
+            src={project.cover}
+            alt=""
+          />
           <div className="flex flex-col gap-2 p-4 text-justify">
-            <a href="#">
-              <h5 className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
-                {project.title}
-              </h5>
-            </a>
+            <h5 className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
+              {project.title}
+            </h5>
+
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
               {project.description}
             </p>
