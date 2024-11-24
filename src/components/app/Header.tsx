@@ -1,21 +1,27 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import BlurFade from "@/components/ui/blur-fade";
 import Link from "next/link";
 
 const Header = () => {
-    return (
-        <div className="mt-10 flex items-center mb-10">
-        <Avatar className="w-32 h-32 mr-4">
-          <AvatarImage src="https://github.com/eliudefrancisco14.png" />
-          <AvatarFallback className="text-black">EF</AvatarFallback>
-        </Avatar>
+  return (
+    <div className="mt-10 flex items-center mb-10">
+      <Avatar className="w-32 h-32 mr-4">
+        <AvatarImage src="https://github.com/eliudefrancisco14.png" />
+        <AvatarFallback className="text-black">EF</AvatarFallback>
+      </Avatar>
 
-        <div>
-          <h4 className="mb-4 text-2xl font-semibold tracking-tighter">
-            Eliúde Paulo Quintas Francisco
-          </h4>
-          <p className="mb-2">
+      <div>
+        <BlurFade delay={0.25} inView>
+          <h2 className="mb-4 text-3xl font-bold tracking-tighter">
+            Eliúde Paulo Quintas Francisco👋
+          </h2>
+        </BlurFade>
+        <BlurFade delay={0.25 * 2} inView>
+          <span className="text-md text-pretty">
             {`Olá, eu sou Eliude Francisco, sou desenvolvedor de software, Angolano e entusiasta na área da Programação.`}
-          </p>
+          </span>
+        </BlurFade>
+        <BlurFade className="mt-2" delay={0.25 * 3} inView>
           <ul className="font-sm mt-0 inline-flex space-x-4 text-neutral-900 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
             <li className="" key="github">
               <Link
@@ -111,7 +117,9 @@ const Header = () => {
             </li>
             <li className="" key="twitter">
               <Link
-                href={"https://x.com/EliudeQuintas14?t=kKetPFRvBGqF12SSSOAyiA&s=08"}
+                href={
+                  "https://x.com/EliudeQuintas14?t=kKetPFRvBGqF12SSSOAyiA&s=08"
+                }
                 className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -155,9 +163,10 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </BlurFade>
       </div>
-    )
-}
+    </div>
+  );
+};
 
 export default Header;
