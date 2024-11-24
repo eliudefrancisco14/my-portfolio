@@ -13,7 +13,7 @@ const About = () => {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">About me</h1>
       <p className="mb-4 text-justify">
         {`Sou o Eliúde Paulo Quintas Francisco, desenvolvedor de sistemas e plataformas. 
-          Sou um amante da tecnologia, gosto de criar soluções com a tecnologia e sou fascinado em resolver os problemas dos outros que envolvem tecnologia como se fossem meus problemas.`}
+          Sou um amante da tecnologia, gosto de criar soluções e sou fascinado em resolver os problemas. `}
       </p>
       <p className="mb-4 text-justify">
         {`Sou desenvolvedor BackEnd e dedicado a lógica dos meus produtos, entretanto, também trabalho muito bem com o front, modelando e criando uma interface agradável e que atenda aos requisitos que sejam solicitados. `}
