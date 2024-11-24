@@ -8,7 +8,7 @@ const BlackHoleBackground: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current!;
 
-    if (!canvas) return; 
+    if (!canvas) return;
 
     if (canvas == null) return;
     const ctx = canvas.getContext("2d");
@@ -18,9 +18,11 @@ const BlackHoleBackground: React.FC = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const requestAnimFrame = window.requestAnimationFrame || function (callback: FrameRequestCallback) {
-      return window.setTimeout(callback, 1000 / 60);
-    };
+    const requestAnimFrame =
+      window.requestAnimationFrame ||
+      function (callback: FrameRequestCallback) {
+        return window.setTimeout(callback, 1000 / 60);
+      };
 
     // Convertendo Particle para classe
     class Particle {
@@ -51,7 +53,14 @@ const BlackHoleBackground: React.FC = () => {
         if (!ctx) return;
         ctx.fillStyle = "rgba(100,100,100," + this.opacity + ")";
         ctx.beginPath();
-        ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
+        ctx.arc(
+          this.position.x,
+          this.position.y,
+          this.radius,
+          0,
+          Math.PI * 2,
+          false
+        );
         ctx.fill();
         ctx.closePath();
       }
@@ -80,15 +89,43 @@ const BlackHoleBackground: React.FC = () => {
         this.particles = [];
 
         for (let i = 0; i < this.count; i++) {
-          this.particles.push(new Particle(this.position.x, this.position.y, this.radius));
+          this.particles.push(
+            new Particle(this.position.x, this.position.y, this.radius)
+          );
         }
       }
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = "rgba(250,250,250,1)";
+        // Criar gradiente radial
+        const gradient = ctx.createRadialGradient(
+          this.position.x,
+          this.position.y,
+          0, // Centro do gradiente (x, y, raio interno)
+          this.position.x,
+          this.position.y,
+          this.radius // Raio externo
+        );
+
+        // Definir as cores e suas posições
+        gradient.addColorStop(0, "#EEEEEEFF"); // Centro - Preto absoluto
+        gradient.addColorStop(0.3, "#EEEEEEFF"); // Azul profundo
+        gradient.addColorStop(0.6, "#EEEEEEFF"); // Roxo intenso
+        gradient.addColorStop(0.8, "#EEEEEEFF"); // Roxo muito escuro
+        gradient.addColorStop(1, "rgba(238, 238, 238, 0)"); // Transparente no limite externo
+
+        // Aplicar o gradiente como estilo de preenchimento
+        ctx.fillStyle = gradient;
+        // ctx.fillStyle = "rgba(255,211,250,25)";
         ctx.beginPath();
-        ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2, false);
+        ctx.arc(
+          this.position.x,
+          this.position.y,
+          this.radius,
+          0,
+          Math.PI * 2,
+          false
+        );
         ctx.fill();
         ctx.closePath();
       }
@@ -117,7 +154,13 @@ const BlackHoleBackground: React.FC = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} id="particle" style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      id="particle"
+      style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
+    />
+  );
 };
 
 export default BlackHoleBackground;
