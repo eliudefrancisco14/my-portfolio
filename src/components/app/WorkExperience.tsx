@@ -4,25 +4,30 @@ interface WorkExperienceData {
   companyName: string;
   jobTitle: string;
   description: string[];
+  tecnoloies: string[];
 }
-
 
 const WorkExperienceData: WorkExperienceData[] = [
   {
     startDate: "Setembro 2023",
     endDate: "Presente",
     companyName: "INOKRI",
-    jobTitle: "Fullstack Developer - CTO",
-    description: ["Com uma visão futurista e detalhada, trabalhei na interface de projectos diversos apresentando assim as melhores soluções para a UI dos projectos. "],
+    jobTitle: "Desenvolvedor Fullstack - CTO",
+    description: [
+      "Com uma visão futurista e detalhada, trabalhei na interface de projectos diversos apresentando assim as melhores soluções para a UI dos projectos. ",
+    ],
+    tecnoloies: ["VueJS","NextJS",".NET","SQLServer","TailwindCSS","Postman"],
   },
   {
     startDate: "Março 2023",
     endDate: "Julho 2023",
     companyName: "INFOSI",
-    jobTitle: "Fullstack Developer",
+    jobTitle: "Desenvolvedor Fullstack",
     description: [
-      "Durante o meu estágio como desenvolvedor, eu pude colaborar em projectos de grande conhecimento nacional, e projectos inovadores.", 
-      "Também tive a oportunidade de melhorar a minha forma de trabalhar com as metodologias ágeis (SCRUM)."],
+      "Durante o meu estágio como desenvolvedor, eu pude colaborar em projectos de grande conhecimento nacional, e projectos inovadores.",
+      "Também tive a oportunidade de melhorar a minha forma de trabalhar com as metodologias ágeis (SCRUM).",
+    ],
+    tecnoloies: ["Laravel","Blade","MySQL","Bootstrap","Trello"],
   },
 ];
 
@@ -45,6 +50,14 @@ const WorkExperience = () => {
                 <ol>
                   {item.description.map((desc, index) => (
                     <li key={index}>{desc}</li>
+                  ))}
+                </ol>
+              </div>
+              <div className="mb-4 text-base font-normal text-gray-800 dark:text-gray-400">
+                <ol className="inline-flex gap-2">
+                  {item.tecnoloies.map((tech, index) => (
+                    <li className="flex flex-wrap gap-1 " key={index}>
+                      <div className="bg-gray-600 text-white p-2 rounded-md">{tech}</div></li>
                   ))}
                 </ol>
               </div>

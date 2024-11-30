@@ -10,24 +10,41 @@ const albumData: string[] = [
 const About = () => {
   return (
     <div className="section-1 mt-5">
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">About me</h1>
+      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">About Me</h1>
       <p className="mb-4 text-justify">
-        {`Sou o Eliúde Paulo Quintas Francisco, desenvolvedor de sistemas e plataformas. 
-          Sou um amante da tecnologia, gosto de criar soluções e sou fascinado em resolver os problemas. `}
+        {`Sou Eliúde Paulo Quintas Francisco, um desenvolvedor fullstack apaixonado por tecnologia e inovação. Adoro criar soluções práticas que ajudam a resolver problemas reais, transformando ideias em ferramentas funcionais e eficientes.`}
       </p>
       <p className="mb-4 text-justify">
-        {`Sou desenvolvedor BackEnd e dedicado a lógica dos meus produtos, entretanto, também trabalho muito bem com o front, modelando e criando uma interface agradável e que atenda aos requisitos que sejam solicitados. `}
+        {`Minha especialidade está no desenvolvimento BackEnd, com foco na lógica e na arquitetura das aplicações. No entanto, também domino o FrontEnd, projetando interfaces intuitivas e visualmente agradáveis que atendem às necessidades dos usuários.`}
       </p>
 
-      {`Os meus hobbyes são:`}
-      <ul className="mb-4">
-        <li>1. Design Gráfico</li>
-        <li>2. Leitura</li>
-        <li>3. Trading - Investimento no mercado financeiro</li>
-        <li>4. Ouvir Músicas e Instrumentais</li>
-        <li>5. Meditar</li>
-        <li>6. Estudar um pouco sobre outras áreas.</li>
+      <p className="mb-4 text-justify">{`Além do meu trabalho como desenvolvedor, tenho hobbies que me mantêm inspirado e criativo:`}</p>
+
+      <ul className="list-none mb-4">
+        <li className="flex items-center mb-2">
+          <span className="mr-2 h-2 w-2 rounded-full bg-black"></span> Design
+          Gráfico
+        </li>
+        <li className="flex items-center mb-2">
+          <span className="mr-2 h-2 w-2 rounded-full bg-black"></span> Leitura
+        </li>
+        <li className="flex items-center mb-2">
+          <span className="mr-2 h-2 w-2 rounded-full bg-black"></span> Trading -
+          Investimento no mercado financeiro
+        </li>
+        <li className="flex items-center mb-2">
+          <span className="mr-2 h-2 w-2 rounded-full bg-black"></span> Ouvir
+          Músicas e Instrumentais
+        </li>
+        <li className="flex items-center mb-2">
+          <span className="mr-2 h-2 w-2 rounded-full bg-black"></span> Meditação
+        </li>
+        <li className="flex items-center mb-2">
+          <span className="mr-2 h-2 w-2 rounded-full bg-black"></span> Estudo de
+          outras áreas
+        </li>
       </ul>
+
       <div className="my-5 p-2">
         <h1 className="text-2xl font-bold my-4">Galeria</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

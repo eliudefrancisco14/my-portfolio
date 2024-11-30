@@ -80,13 +80,7 @@ export function Navbar({
           </span>
         </Link>
       ))}
-      {/* <div className="size-12 rounded-full flex items-center justify-center">
-        {resolvedTheme === "dark" ? (
-          <Sun className="w-5 h-5 cursor-pointer" onClick={() => setTheme("light")}/>
-        ) : (
-          <Moon className="w-5 h-5 cursor-pointer" onClick={() => setTheme("light")}/>
-        )}
-      </div> */}
+      
     </div>
   );
 }

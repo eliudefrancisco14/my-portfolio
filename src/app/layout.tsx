@@ -4,7 +4,7 @@ import "./globals.css";
 import BlackHoleBackground from "@/components/BlackHoleBackground";
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
-import Providers from "./providers";
+import { ThemeProvider } from "../components/theme-provider";
 import BlackHoleBackgroundDark from "@/components/BlackHoleBackgroundDark";
 
 const geistSans = localFont({
@@ -91,7 +91,14 @@ export default function RootLayout({
         {/* <BlackHoleBackgroundDark /> */}
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
-          <Providers>{children}</Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
           <Footer />
         </main>
       </body>
