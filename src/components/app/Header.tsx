@@ -12,7 +12,7 @@ const Header = () => {
 
       <div>
         <BlurFade delay={0.25} inView>
-          <h2 className="mb-4 text-3xl font-bold tracking-tighter">
+          <h2 className="mb-4 text-3xl font-bold tracking-tighter dark:text-white">
             Eliúde Paulo Quintas Francisco👋
           </h2>
         </BlurFade>

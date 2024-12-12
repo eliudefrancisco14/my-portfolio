@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { ModeToggle } from "./ModeToggle";
 
 type AnimatedTabsProps = {
   containerClassName?: string;
@@ -80,6 +81,7 @@ export function Navbar({
           </span>
         </Link>
       ))}
+      <ModeToggle />
       
     </div>
   );

@@ -156,6 +156,7 @@ const BlackHoleBackground: React.FC = () => {
 
   return (
     <canvas
+      className="scale-100 dark:scale-0"
       ref={canvasRef}
       id="particle"
       style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }}
