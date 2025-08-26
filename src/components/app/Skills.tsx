@@ -1,64 +1,3 @@
-// import MyIcons from "./skills/MyIcons";
-
-// const skillData: string[] = [
-//   "C#",
-//   "HTML",
-//   "CSS",
-//   "JavaScript",
-//   "PHP",
-//   "SQLServer",
-//   "Python",
-//   "Java",
-// ];
-
-// const frameworkData: string[] = [
-//   "Laravel",
-//   "Vue.js",
-//   "React",
-//   "Next.js",
-//   "Express.js",
-//   "ASP.NET Core",
-//   "NestJS",
-//   "Nuxt.js",
-// ];
-
-// const toolsData: string[] = ["VSCode", "Git", "GitHub", "Docker", "postman"];
-
-// const Skills = () => {
-//   return (
-//     <div className="mt-4 inline-flex gap-3">
-//       <MyIcons />
-//       <div className="flex flex-col gap-2 w-full bg-white rounded-md shadow">
-//         <h4 className="text-lg font-bold p-2">FrameWorks</h4>
-//         <div className="flex flex-wrap gap-1 p-2">
-//           {frameworkData.map((framework, index) => (
-//             <div
-//               key={index}
-//               className="flex border border-none rounded-md px-2 py-1 text-sm bg-gray-600 text-white"
-//             >
-//               {framework}
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//       <div className="flex flex-col gap-2 w-full bg-white rounded-md shadow">
-//         <h4 className="text-lg font-bold p-2">Ferramentas</h4>
-//         <div className="flex flex-wrap gap-1 p-2">
-//           {toolsData.map((tools, index) => (
-//             <div
-//               key={index}
-//               className="flex border border-none rounded-md px-2 py-1 text-sm bg-gray-600 text-white"
-//             >
-//               {tools}
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-// export default Skills;
-
 import {
   DiJavascript,
   DiCss3,
@@ -67,15 +6,19 @@ import {
   DiJava,
   DiPhp,
   DiMysql,
+  DiLaravel,
+  DiVisualstudio,
 } from "react-icons/di";
 import {
   FaReact,
   FaNodeJs,
-  FaLaravel,
+  // FaLaravel,
   FaDocker,
   FaGitAlt,
 } from "react-icons/fa";
-import { SiVisualstudiocode, SiPostman, SiFigma } from "react-icons/si";
+import { 
+  // SiVisualstudiocode, 
+  SiPostman } from "react-icons/si";
 import {
   Tooltip,
   TooltipContent,
@@ -96,8 +39,8 @@ const Section = ({ title, children }: SectionProps) => (
   </div>
 );
 
-const Tecnologias = () => (
-  <Section title="Tecnologias">
+const Technologies = () => (
+  <Section title="Technologies">
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
@@ -188,7 +131,8 @@ const Frameworks = () => (
 
       <Tooltip>
         <TooltipTrigger asChild>
-          <FaLaravel size={35} className="cursor-pointer" />
+          <DiLaravel size={35} className="cursor-pointer"/>
+          {/* <FaLaravel size={35} className="cursor-pointer" /> */}
         </TooltipTrigger>
         <TooltipContent>
           <p>Laravel</p>
@@ -203,7 +147,8 @@ const Ferramentas = () => (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <SiVisualstudiocode size={35} className="cursor-pointer" />
+          {/* <SiVisualstudiocode size={35} className="cursor-pointer" /> */}
+          <DiVisualstudio size={35} className="cursor-pointer" />
         </TooltipTrigger>
         <TooltipContent>
           <p>Visual Studio Code</p>
@@ -242,7 +187,7 @@ const Ferramentas = () => (
 
 const Skills = () => (
   <div className="mt-4 inline-flex gap-4">
-    <Tecnologias />
+    <Technologies />
     <Frameworks />
     <Ferramentas />
   </div>
