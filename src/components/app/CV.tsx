@@ -9,7 +9,7 @@ const CV = () => {
         <div className="flex flex-wrap gap-1">
           {/* <Button>Cópia do Bilhete de Identidade</Button> */}
           <a href="/CV.pdf" target="_blank">
-            <Button>
+            <Button variant="default" className="bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200">
               Abrir Currículo <ArrowIcon />
             </Button>
           </a>

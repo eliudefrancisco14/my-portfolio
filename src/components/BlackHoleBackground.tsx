@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 const BlackHoleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const { theme, systemTheme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current!;
@@ -15,8 +17,15 @@ const BlackHoleBackground: React.FC = () => {
 
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const resize = () => {
+      canvas.width = Math.floor(window.innerWidth * dpr);
+      canvas.height = Math.floor(window.innerHeight * dpr);
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
 
     const requestAnimFrame =
       window.requestAnimationFrame ||
@@ -51,7 +60,10 @@ const BlackHoleBackground: React.FC = () => {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = "rgba(100,100,100," + this.opacity + ")";
+        const isDark = (theme === "dark" || (theme === "system" && systemTheme === "dark"));
+        ctx.fillStyle = isDark
+          ? "rgba(255,255,255," + this.opacity + ")"
+          : "rgba(100,100,100," + this.opacity + ")";
         ctx.beginPath();
         ctx.arc(
           this.position.x,
@@ -84,8 +96,11 @@ const BlackHoleBackground: React.FC = () => {
 
       constructor(x: number, y: number) {
         this.position = { x, y };
-        this.radius = 120;
-        this.count = 2000;
+        this.radius = 110;
+        // fewer particles for perf; scale with screen size
+        const base = 900;
+        const scale = Math.min(window.innerWidth * window.innerHeight / (1280 * 720), 1.4);
+        this.count = Math.floor(base * scale);
         this.particles = [];
 
         for (let i = 0; i < this.count; i++) {
@@ -107,12 +122,20 @@ const BlackHoleBackground: React.FC = () => {
           this.radius // Raio externo
         );
 
-        // Definir as cores e suas posições
-        gradient.addColorStop(0, "#EEEEEEFF"); // Centro - Preto absoluto
-        gradient.addColorStop(0.3, "#EEEEEEFF"); // Azul profundo
-        gradient.addColorStop(0.6, "#EEEEEEFF"); // Roxo intenso
-        gradient.addColorStop(0.8, "#EEEEEEFF"); // Roxo muito escuro
-        gradient.addColorStop(1, "rgba(238, 238, 238, 0)"); // Transparente no limite externo
+        // Definir as cores e suas posições conforme tema
+        const isDark = (theme === "dark" || (theme === "system" && systemTheme === "dark"));
+        if (isDark) {
+          gradient.addColorStop(0, "rgba(0,0,0,1)");
+          gradient.addColorStop(0.4, "rgba(0,0,0,0.9)");
+          gradient.addColorStop(0.8, "rgba(0,0,0,0.6)");
+          gradient.addColorStop(1, "rgba(0,0,0,0)");
+        } else {
+          gradient.addColorStop(0, "#EEEEEEFF");
+          gradient.addColorStop(0.3, "#EEEEEEFF");
+          gradient.addColorStop(0.6, "#EEEEEEFF");
+          gradient.addColorStop(0.8, "#EEEEEEFF");
+          gradient.addColorStop(1, "rgba(238, 238, 238, 0)");
+        }
 
         // Aplicar o gradiente como estilo de preenchimento
         ctx.fillStyle = gradient;
@@ -138,10 +161,12 @@ const BlackHoleBackground: React.FC = () => {
       }
     }
 
-    const emitter = new Emitter(canvas.width / 2, canvas.height / 2);
+    const emitter = new Emitter(window.innerWidth / 2, window.innerHeight / 2);
 
+    let stopped = false;
     function loop() {
       if (!ctx) return;
+      if (stopped) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       emitter.update();
       requestAnimFrame(loop);
@@ -149,10 +174,19 @@ const BlackHoleBackground: React.FC = () => {
 
     const animationId = requestAnimFrame(loop);
 
+    const onVisibility = () => {
+      stopped = document.hidden;
+      if (!stopped) requestAnimFrame(loop);
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("resize", resize);
+
     return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("resize", resize);
       window.cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [theme, systemTheme]);
 
   return (
     <canvas

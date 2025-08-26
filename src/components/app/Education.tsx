@@ -36,10 +36,10 @@ const Education = () => {
               <time className="mb-1 text-sm font-normal leading-none text-gray-600 dark:text-gray-500">
                 {item.startDate} - {item.endDate}
               </time>
-              <h3 className="text-lg font-semibold text-gray-600 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
                 {item.courseName} | {item?.collegeName || item?.schoolName}
               </h3>
-              <p className="mb-4 text-base font-normal text-gray-800 dark:text-gray-400">
+              <p className="mb-4 text-base font-normal text-gray-800 dark:text-gray-300">
                 {item.address}
               </p>
             </li>

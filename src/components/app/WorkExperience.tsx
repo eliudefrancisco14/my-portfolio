@@ -53,21 +53,24 @@ const WorkExperience = () => {
               <time className="mb-1 text-sm font-normal leading-none text-gray-600 dark:text-gray-500">
                 {item.startDate} - {item.endDate}
               </time>
-              <h3 className="text-lg font-semibold text-gray-600 dark:text-white">
+              <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
                 {item.companyName} | {item.jobTitle}
               </h3>
-              <div className="mb-4 text-base font-normal text-gray-800 dark:text-gray-400">
+              <div className="mb-4 text-base font-normal text-gray-800 dark:text-gray-300">
                 <ol>
                   {item.description.map((desc, index) => (
                     <li key={index}>{desc}</li>
                   ))}
                 </ol>
               </div>
-              <div className="mb-4 text-base font-normal text-gray-800 dark:text-gray-400">
-                <ol className="inline-flex gap-2">
+              <div className="mb-4 text-base font-normal text-gray-800 dark:text-gray-300">
+                <ol className="inline-flex gap-2 flex-wrap">
                   {item.tecnologies.map((tech, index) => (
-                    <li className="flex flex-wrap gap-1 " key={index}>
-                      <div className="bg-gray-600 text-white p-2 rounded-md">{tech}</div></li>
+                    <li className="flex flex-wrap gap-1" key={index}>
+                      <div className="px-2 py-1 rounded-md border border-neutral-200 dark:border-neutral-800 bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
+                        {tech}
+                      </div>
+                    </li>
                   ))}
                 </ol>
               </div>

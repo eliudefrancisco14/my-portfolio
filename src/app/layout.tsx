@@ -5,7 +5,6 @@ import BlackHoleBackground from "@/components/BlackHoleBackground";
 import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "../components/theme-provider";
-import BlackHoleBackgroundDark from "@/components/BlackHoleBackgroundDark";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -83,24 +82,22 @@ export default function RootLayout({
         geistSans.variable,
         geistMono.variable
       )}
+      suppressHydrationWarning
     >
-      <body
-        className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto"
-      >
-        <BlackHoleBackground />
-        {/* <BlackHoleBackgroundDark /> */}
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+      <body className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <BlackHoleBackground />
+          <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+            <Navbar />
             {children}
-          </ThemeProvider>
-          <Footer />
-        </main>
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

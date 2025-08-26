@@ -7,7 +7,7 @@ const Header = () => {
     <div className="mt-10 flex items-center mb-10">
       <Avatar className="w-32 h-32 mr-4">
         <AvatarImage src="https://github.com/eliudefrancisco14.png" />
-        <AvatarFallback className="text-black">EF</AvatarFallback>
+        <AvatarFallback className="text-black dark:text-white">EF</AvatarFallback>
       </Avatar>
 
       <div>
@@ -26,7 +26,7 @@ const Header = () => {
             <li className="" key="github">
               <Link
                 href={"https://github.com/eliudefrancisco14"}
-                className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
+                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -51,7 +51,7 @@ const Header = () => {
                 href={
                   "https://linkedin.com/in/eliude-quintas-francisco-7b2347252"
                 }
-                className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
+                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -76,7 +76,7 @@ const Header = () => {
                 href={
                   "https://instagram.com/eliudepauloquintas/profilecard/?igsh=MWNodzRia20yc244bA=="
                 }
-                className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
+                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -99,7 +99,7 @@ const Header = () => {
             <li className="" key="facebook">
               <Link
                 href={"https://www.facebook.com/eliudefrancisco14"}
-                className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
+                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -120,7 +120,7 @@ const Header = () => {
                 href={
                   "https://x.com/EliudeQuintas14?t=kKetPFRvBGqF12SSSOAyiA&s=08"
                 }
-                className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
+                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -139,7 +139,7 @@ const Header = () => {
             <li className="" key="threads">
               <Link
                 href={"https://threads.net/@eliudepauloquintas?invite=0"}
-                className="flex items-center transition-all hover:text-neutral-500 dark:hover:text-neutral-800"
+                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
