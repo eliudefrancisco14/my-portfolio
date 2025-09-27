@@ -45,11 +45,11 @@ const BlackHoleBackground: React.FC = () => {
       y: number;
 
       constructor(x: number, y: number, distance: number) {
-        this.angle = Math.random() * 2 * Math.PI;
+        this.angle = Math.random() * 10 * Math.PI;
         this.radius = Math.random();
         this.opacity = (Math.random() * 5 + 2) / 10;
-        this.distance = (1 / this.opacity) * distance;
-        this.speed = this.distance * 0.000002;
+        this.distance = (0.9 / this.opacity) * distance;
+        this.speed = this.distance * 0.000009;
         this.x = x;
         this.y = y;
         this.position = {
@@ -60,15 +60,30 @@ const BlackHoleBackground: React.FC = () => {
 
       draw() {
         if (!ctx) return;
-        const isDark = (theme === "dark" || (theme === "system" && systemTheme === "dark"));
-        ctx.fillStyle = isDark
-          ? "rgba(255,255,255," + this.opacity + ")"
-          : "rgba(100,100,100," + this.opacity + ")";
+        const isDark =
+          theme === "dark" || (theme === "system" && systemTheme === "dark");
+        // Cores inspiradas em discos de acreção de buracos negros (tons de azul, roxo, branco)
+        let color;
+        if (isDark) {
+          // Gradiente de azul para roxo e branco
+          const t = this.opacity; // 0.2 ~ 0.7
+          if (t < 0.35) {
+            color = `rgba(80,120,255,${this.opacity})`; // azul claro
+          } else if (t < 0.55) {
+            color = `rgba(180,80,255,${this.opacity})`; // roxo
+          } else {
+            color = `rgba(255,255,255,${this.opacity})`; // branco
+          }
+        } else {
+          // Tons dourados e brancos para tema claro
+            color = `rgba(30, 30, 30, ${this.opacity})`;
+        }
+        ctx.fillStyle = color;
         ctx.beginPath();
         ctx.arc(
           this.position.x,
           this.position.y,
-          this.radius,
+          this.radius * 1, // Aumenta o tamanho dos círculos
           0,
           Math.PI * 2,
           false
@@ -99,7 +114,10 @@ const BlackHoleBackground: React.FC = () => {
         this.radius = 110;
         // fewer particles for perf; scale with screen size
         const base = 900;
-        const scale = Math.min(window.innerWidth * window.innerHeight / (1280 * 720), 1.4);
+        const scale = Math.min(
+          (window.innerWidth * window.innerHeight) / (1280 * 720),
+          1.4
+        );
         this.count = Math.floor(base * scale);
         this.particles = [];
 
@@ -123,18 +141,20 @@ const BlackHoleBackground: React.FC = () => {
         );
 
         // Definir as cores e suas posições conforme tema
-        const isDark = (theme === "dark" || (theme === "system" && systemTheme === "dark"));
+        const isDark =
+          theme === "dark" || (theme === "system" && systemTheme === "dark");
         if (isDark) {
-          gradient.addColorStop(0, "rgba(0,0,0,1)");
-          gradient.addColorStop(0.4, "rgba(0,0,0,0.9)");
-          gradient.addColorStop(0.8, "rgba(0,0,0,0.6)");
-          gradient.addColorStop(1, "rgba(0,0,0,0)");
+          gradient.addColorStop(0, "#0a0a0f");
+          gradient.addColorStop(0.3, "#181824");
+          gradient.addColorStop(0.6, "#23233a");
+          gradient.addColorStop(0.8, "rgba(10,10,15,0.7)");
+          gradient.addColorStop(1, "rgba(10,10,15,0)");
         } else {
-          gradient.addColorStop(0, "#EEEEEEFF");
-          gradient.addColorStop(0.3, "#EEEEEEFF");
-          gradient.addColorStop(0.6, "#EEEEEEFF");
-          gradient.addColorStop(0.8, "#EEEEEEFF");
-          gradient.addColorStop(1, "rgba(238, 238, 238, 0)");
+            gradient.addColorStop(0, "#ffffff");
+            gradient.addColorStop(0.3, "#f5f5f5");
+            gradient.addColorStop(0.6, "#e0e0e0");
+            gradient.addColorStop(0.8, "rgba(255,255,255,0.7)");
+            gradient.addColorStop(1, "rgba(255,255,255,0)");
         }
 
         // Aplicar o gradiente como estilo de preenchimento

@@ -38,7 +38,7 @@ const BlackHoleBackgroundDark: React.FC = () => {
         this.radius = Math.random();
         this.opacity = (Math.random() * 5 + 2) / 10;
         this.distance = (1 / this.opacity) * distance;
-        this.speed = this.distance * 0.000002;
+        this.speed = this.distance * 0.00002;
         this.x = x;
         this.y = y;
         this.position = {

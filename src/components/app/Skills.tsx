@@ -16,9 +16,10 @@ import {
   FaDocker,
   FaGitAlt,
 } from "react-icons/fa";
-import { 
-  // SiVisualstudiocode, 
-  SiPostman } from "react-icons/si";
+import {
+  // SiVisualstudiocode,
+  SiPostman,
+} from "react-icons/si";
 import {
   Tooltip,
   TooltipContent,
@@ -33,79 +34,85 @@ interface SectionProps {
 
 const Section = ({ title, children }: SectionProps) => (
   <div className="flex flex-col gap-2 w-full rounded-md border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 backdrop-blur">
-    <h4 className="text-lg font-bold p-2 text-neutral-900 dark:text-neutral-100">{title}</h4>
+    <h4 className="text-lg font-bold p-2 text-neutral-900 dark:text-neutral-100">
+      {title}
+    </h4>
     <hr className="ml-2 mr-4 border-neutral-200 dark:border-neutral-800" />
-    <div className="flex flex-wrap gap-2 p-2 text-neutral-800 dark:text-neutral-200">{children}</div>
+    <div className="flex flex-wrap gap-2 p-2 text-neutral-800 dark:text-neutral-200">
+      {children}
+    </div>
   </div>
 );
 
 const Technologies = () => (
-  <Section title="Technologies">
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DiJavascript size={35} className="cursor-pointer" />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>JavaScript</p>
-        </TooltipContent>
-      </Tooltip>
+  <div className="flex flex-col gap-2 w-full min-w-[200px]">
+    <Section title="Technologies">
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DiJavascript size={35} className="cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>JavaScript</p>
+          </TooltipContent>
+        </Tooltip>
 
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DiCss3 size={35} className="cursor-pointer" />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>CSS3</p>
-        </TooltipContent>
-      </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DiCss3 size={35} className="cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>CSS3</p>
+          </TooltipContent>
+        </Tooltip>
 
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DiHtml5 size={35} className="cursor-pointer" />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>HTML5</p>
-        </TooltipContent>
-      </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DiHtml5 size={35} className="cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>HTML5</p>
+          </TooltipContent>
+        </Tooltip>
 
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DiPython size={35} className="cursor-pointer" />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Python</p>
-        </TooltipContent>
-      </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DiPython size={35} className="cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Python</p>
+          </TooltipContent>
+        </Tooltip>
 
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DiJava size={35} className="cursor-pointer" />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>Java</p>
-        </TooltipContent>
-      </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DiJava size={35} className="cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Java</p>
+          </TooltipContent>
+        </Tooltip>
 
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DiPhp size={35} className="cursor-pointer" />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>PHP</p>
-        </TooltipContent>
-      </Tooltip>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DiPhp size={35} className="cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>PHP</p>
+          </TooltipContent>
+        </Tooltip>
 
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <DiMysql size={35} className="cursor-pointer" />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>MySQL</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  </Section>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <DiMysql size={35} className="cursor-pointer" />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>MySQL</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </Section>
+  </div>
 );
 
 const Frameworks = () => (
@@ -131,7 +138,7 @@ const Frameworks = () => (
 
       <Tooltip>
         <TooltipTrigger asChild>
-          <DiLaravel size={35} className="cursor-pointer"/>
+          <DiLaravel size={35} className="cursor-pointer" />
           {/* <FaLaravel size={35} className="cursor-pointer" /> */}
         </TooltipTrigger>
         <TooltipContent>
@@ -186,7 +193,7 @@ const Ferramentas = () => (
 );
 
 const Skills = () => (
-  <div className="mt-4 inline-flex gap-4 flex-wrap">
+  <div className="mt-4 flex gap-4 flex-row flex-nowrap overflow-x-auto text-center">
     <Technologies />
     <Frameworks />
     <Ferramentas />

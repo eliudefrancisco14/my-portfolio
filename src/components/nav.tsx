@@ -43,9 +43,10 @@ export function Navbar({
   return (
     <div
       className={cn(
-        "relative flex flex-wrap items-center justify-center",
+        "relative flex flex-wrap items-center justify-center bg-white/30 dark:bg-neutral-900/10",
         containerClassName
       )}
+      style={{ borderRadius: "1.5rem" }}
     >
       {tabs.map((tab, index) => (
         <Link
@@ -56,7 +57,7 @@ export function Navbar({
             localStorage.setItem("activeTabIndex", index.toString());
           }}
           className={cn(
-            "group relative z-[1] rounded-full px-4 py-2",
+            "group relative z-[1] rounded-lg px-4 py-2",
             { "z-0": activeIdx === index },
             tabClassName
           )}
@@ -66,7 +67,7 @@ export function Navbar({
               layoutId="clicked-button"
               transition={{ duration: 0.2 }}
               className={cn(
-                "absolute inset-0 rounded-full bg-neutral-900 dark:bg-neutral-800",
+                "absolute inset-0 rounded-lg bg-neutral-900/60 dark:bg-neutral-800/60 backdrop-blur",
                 activeTabClassName
               )}
             />
@@ -88,7 +89,7 @@ export function Navbar({
         <button
           aria-label="Alternar tema"
           onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-          className="ml-3 relative inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 backdrop-blur transition-colors"
+          className="ml-3 relative inline-flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 backdrop-blur transition-colors"
         >
           <Moon className="h-4 w-4 transition-opacity opacity-100 dark:opacity-0" />
           <Sun className="absolute h-4 w-4 transition-opacity opacity-0 dark:opacity-100" />

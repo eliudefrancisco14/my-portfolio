@@ -6,15 +6,20 @@ import { Navbar } from "@/components/nav";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "../components/theme-provider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import { Montserrat, Plus_Jakarta_Sans } from "next/font/google";
+
+// Fonte para títulos
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+// Fonte para textos corridos
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 const meta = {
@@ -39,9 +44,11 @@ export const metadata: Metadata = {
   },
   keywords: [
     "Eliude Francisco",
+    "Eliude Paulo Quintas Francisco",
     "Eliude",
+    "Quintas",
     "Francisco",
-    "eliudefrancisco.com",
+    "eliudefrancisco14",
     "Back-End Developer",
     "Back-End",
     "Developer",
@@ -77,14 +84,10 @@ export default function RootLayout({
   return (
     <html
       lang="pt"
-      className={cx(
-        "text-base font-sans",
-        geistSans.variable,
-        geistMono.variable
-      )}
+      className={`${montserrat.variable} ${jakarta.variable}`}
       suppressHydrationWarning
     >
-      <body className="antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
+      <body className="font-sans antialiased max-w-2xl mx-4 mt-8 lg:mx-auto">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
