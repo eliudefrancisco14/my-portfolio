@@ -57,6 +57,6 @@ O servidor estara disponivel em http://localhost:3000
 
 ## Contacto
 
-- **Email:** eliudefrancisco14@gmail.com
+- **Email:** eliudepauloquintasf@gmail.com
 - **LinkedIn:** [eliude-quintas-francisco](https://linkedin.com/in/eliude-quintas-francisco-7b2347252)
 - **GitHub:** [@eliudefrancisco14](https://github.com/eliudefrancisco14)
