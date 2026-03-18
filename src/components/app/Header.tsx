@@ -5,118 +5,95 @@ import {
   Github,
   Linkedin,
   Instagram,
-  Facebook,
   Twitter,
   MessageCircle,
 } from "lucide-react";
 
 const Header = () => {
   return (
-    <div className="mt-10 flex items-center mb-10">
+    <div className="mt-10 flex items-start mb-10 gap-6">
       <BlurFade delay={0.25} inView>
-        <Avatar className="w-32 h-32 mr-4">
+        <Avatar className="w-28 h-28 shrink-0">
           <AvatarImage src="https://github.com/eliudefrancisco14.png" />
           <AvatarFallback className="text-black dark:text-white p-0">
             <img
               src="/perfil-new.jpeg"
-              alt="Avatar Fallback"
+              alt="Eliude Francisco"
               className="w-full h-full object-cover rounded-full"
             />
           </AvatarFallback>
         </Avatar>
       </BlurFade>
 
-      <div>
+      <div className="flex flex-col gap-2">
         <BlurFade delay={0.25} inView>
-          <h2 className="mb-4 text-3xl font-bold tracking-tighter">
-            Eliúde Paulo Quintas Francisco{" "}
-            <span>
-              <img
-                src="/icon/black-hole-white.png"
-                alt="Black Hole Icon"
-                style={{
-                  display: "inline",
-                  width: 42,
-                  height: 42,
-                  verticalAlign: "middle",
-                  filter:
-                    "invert(19%) sepia(81%) saturate(7496%) hue-rotate(262deg) brightness(93%) contrast(101%)",
-                }}
-                className="block dark:hidden"
-              />
-            </span>
-          </h2>
+          <h1 className="text-2xl font-bold tracking-tight">
+            Eliúde Francisco
+          </h1>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium mt-0.5">
+            Software Engineer · Data Intelligence · AI-Driven Development
+          </p>
         </BlurFade>
         <BlurFade delay={0.25 * 2} inView>
-          <span className="text-md text-pretty">
-            {`Olá, eu sou Eliude Francisco, sou desenvolvedor de software, Angolano e entusiasta na área da Programação.`}
-          </span>
+          <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-lg">
+            {`Engenheiro de Software especializado em inteligência de dados, com atuação em produtos digitais B2B e B2G. Orquestro soluções completas — do conceito ao deploy — combinando desenvolvimento moderno com IA aplicada.`}
+          </p>
         </BlurFade>
-        <BlurFade className="mt-2" delay={0.25 * 3} inView>
-          <ul className="font-sm mt-0 inline-flex space-x-4 text-neutral-900 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-            <li key="github">
+        <BlurFade delay={0.25 * 3} inView>
+          <ul className="mt-1 inline-flex space-x-4 text-neutral-600 dark:text-neutral-400">
+            <li>
               <Link
                 href="https://github.com/eliudefrancisco14"
-                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
+                aria-label="GitHub"
+                className="flex items-center transition-all hover:text-neutral-900 dark:hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="w-6 h-6" />
+                <Github className="w-5 h-5" />
               </Link>
             </li>
-
-            <li key="linkedin">
+            <li>
               <Link
                 href="https://linkedin.com/in/eliude-quintas-francisco-7b2347252"
-                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
+                aria-label="LinkedIn"
+                className="flex items-center transition-all hover:text-neutral-900 dark:hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-5 h-5" />
               </Link>
             </li>
-
-            <li key="instagram">
+            <li>
               <Link
-                href="https://instagram.com/eliudepauloquintas/profilecard/?igsh=MWNodzRia20yc244bA=="
-                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
+                href="https://instagram.com/eliudepauloquintas"
+                aria-label="Instagram"
+                className="flex items-center transition-all hover:text-neutral-900 dark:hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Instagram className="w-6 h-6" />
+                <Instagram className="w-5 h-5" />
               </Link>
             </li>
-
-            <li key="facebook">
+            <li>
               <Link
-                href="https://www.facebook.com/eliudefrancisco14"
-                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
+                href="https://x.com/EliudeQuintas14"
+                aria-label="X / Twitter"
+                className="flex items-center transition-all hover:text-neutral-900 dark:hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Facebook className="w-6 h-6" />
+                <Twitter className="w-5 h-5" />
               </Link>
             </li>
-
-            <li key="twitter">
+            <li>
               <Link
-                href="https://x.com/EliudeQuintas14?t=kKetPFRvBGqF12SSSOAyiA&s=08"
-                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
+                href="https://threads.net/@eliudepauloquintas"
+                aria-label="Threads"
+                className="flex items-center transition-all hover:text-neutral-900 dark:hover:text-white"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter className="w-6 h-6" />
-              </Link>
-            </li>
-
-            <li key="threads">
-              <Link
-                href="https://threads.net/@eliudepauloquintas?invite=0"
-                className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MessageCircle className="w-6 h-6" />
+                <MessageCircle className="w-5 h-5" />
               </Link>
             </li>
           </ul>
