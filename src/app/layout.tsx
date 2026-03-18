@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import BlackHoleBackground from "@/components/BlackHoleBackground";
 import { Navbar } from "@/components/nav";
@@ -22,13 +21,16 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
+const baseUrl = "https://eliudefrancisco.com";
+
 const meta = {
   title: "Eliude Francisco",
-  description: "",
+  description:
+    "Engenheiro de Software especializado em Inteligência de Dados e desenvolvimento de produtos digitais B2B e B2G. Orquestro soluções completas — do conceito ao deploy — combinando desenvolvimento moderno com IA aplicada.",
 };
 
 export const metadata: Metadata = {
-  //metadataBase: new URL(baseUrl),
+  metadataBase: new URL(baseUrl),
   title: {
     default: meta.title,
     template: "%s | Eliude Francisco",
@@ -37,29 +39,41 @@ export const metadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.description,
-    //url: baseUrl,
+    url: baseUrl,
     siteName: meta.title,
-    locale: "en_US",
+    locale: "pt_AO",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Eliude Francisco — Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: meta.title,
+    description: meta.description,
+    creator: "@EliudeQuintas14",
+    images: ["/og-image.jpg"],
   },
   keywords: [
     "Eliude Francisco",
     "Eliude Paulo Quintas Francisco",
-    "Eliude",
-    "Quintas",
-    "Francisco",
-    "eliudefrancisco14",
-    "Back-End Developer",
-    "Back-End",
-    "Developer",
-    "Software",
-    "Engineer",
-    "Angola",
-    "Luanda",
-    "Vercel",
+    "Software Engineer Angola",
+    "Data Intelligence",
+    "AI-Driven Development",
+    "Desenvolvedor de Software Angola",
+    "Produtos Digitais B2B",
+    "Produtos Digitais B2G",
+    "FastAPI",
     "Next.js",
-    "TailwindCSS",
-    "Blog",
+    "Python",
+    "Odoo Angola",
+    "Luanda",
+    "UNDERALL",
   ],
   robots: {
     index: true,
@@ -73,8 +87,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
-const cx = (...classes: string[]) => classes.filter(Boolean).join(" ");
 
 export default function RootLayout({
   children,
