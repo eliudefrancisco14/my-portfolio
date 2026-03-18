@@ -25,7 +25,7 @@ Este portfolio foi construido com Next.js 15, React e TailwindCSS. Apresenta a t
 ```
 src/
 app/                  # Rotas Next.js (App Router)
-  page.tsx            # Pagina principal (home)
+  page.tsx            # Pagina principal (Home)
   aboutme/            # Sobre mim
   projects/           # Projectos
   talktome/           # Contacto
