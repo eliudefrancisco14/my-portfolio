@@ -56,32 +56,6 @@ const projects: ProjectData[] = [
     tecnologies: ["Laravel", "Bootstrap", "MySQL"],
     status: "live",
   },
-  {
-    title: "Gateway Matrix API",
-    description:
-      "API de streaming broadcast desenvolvida com Python/FastAPI e PostgreSQL, com suporte a ingestão de streams em tempo real, autenticação JWT e arquitetura orientada a eventos.",
-    problem:
-      "Criou uma infraestrutura de backend escalável para transmissão de conteúdo broadcast, com monitorização de fontes e processamento assíncrono de streams.",
-    cover: "/project/Infosi.png",
-    code: "https://github.com/eliudefrancisco14/gateway-matrix-api",
-    nocode: false,
-    noview: true,
-    tecnologies: ["Python", "FastAPI", "PostgreSQL", "JWT", "Docker"],
-    status: "development",
-  },
-  {
-    title: "SnapRead",
-    description:
-      "Aplicação web de extração de texto a partir de imagens (OCR), com interface moderna em Next.js e API Python dedicada para processamento de imagens.",
-    problem:
-      "Simplificou a digitalização de documentos físicos, permitindo extrair e copiar texto de fotografias ou scans sem ferramentas complexas.",
-    cover: "/project/Socia.jpg",
-    code: "https://github.com/eliudefrancisco14/snapread-api",
-    nocode: false,
-    noview: true,
-    tecnologies: ["Next.js", "Python", "TypeScript", "OCR"],
-    status: "development",
-  },
 ];
 
 const statusLabel: Record<ProjectData["status"], { label: string; className: string }> = {
