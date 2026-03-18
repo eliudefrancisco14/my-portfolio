@@ -12,19 +12,24 @@ const WorkExperienceData: WorkExperienceData[] = [
     startDate: "Dezembro 2024",
     endDate: "Presente",
     companyName: "UNDERALL",
-    jobTitle: "Desenvolvedor de Software",
+    jobTitle: "Engenheiro de Software (Data & AI)",
     description: [
-      "Com uma visão futurista e detalhada, trabalhei na interface de projectos diversos apresentando assim as melhores soluções para a UI dos projectos. ",
+      "Desenvolvimento de produtos digitais B2B e B2G com foco em inteligência de dados e automação.",
+      "Orquestro o ciclo completo de desenvolvimento — do conceito ao deploy — utilizando IA (Lovable, Manus) para acelerar a entrega de soluções complexas.",
+      "Implementação e customização de Odoo para clientes empresariais, atuando como parceiro de revendas.",
+      "Construção de APIs robustas com Python/FastAPI e .NET, integradas a pipelines de dados com SQL Server.",
     ],
-    tecnologies: ["Python", "Odoo", "NextJS", ".NET", "SQLServer", "TailwindCSS", "Postman", "SQL"],
+    tecnologies: ["Python", "FastAPI", "Odoo", "NextJS", ".NET", "SQLServer", "TailwindCSS", "Docker", "SQL"],
   },
   {
     startDate: "Setembro 2023",
     endDate: "Novembro 2024",
     companyName: "INOKRI",
-    jobTitle: "Desenvolvedor Fullstack - CTO",
+    jobTitle: "CTO & Desenvolvedor Fullstack",
     description: [
-      "Com uma visão futurista e detalhada, trabalhei na interface de projectos diversos apresentando assim as melhores soluções para a UI dos projectos. ",
+      "Liderança técnica da empresa, definindo arquitetura e stack tecnológico dos produtos.",
+      "Desenvolvimento de plataformas web completas com Vue.js e Next.js no frontend e .NET no backend.",
+      "Gestão de base de dados SQL Server e integração de APIs REST para clientes empresariais.",
     ],
     tecnologies: ["VueJS", "NextJS", ".NET", "SQLServer", "TailwindCSS", "Postman"],
   },
@@ -32,10 +37,10 @@ const WorkExperienceData: WorkExperienceData[] = [
     startDate: "Março 2023",
     endDate: "Julho 2023",
     companyName: "INFOSI",
-    jobTitle: "Desenvolvedor Fullstack",
+    jobTitle: "Desenvolvedor Fullstack (Estágio)",
     description: [
-      "Durante o meu estágio como desenvolvedor, eu pude colaborar em projectos de grande conhecimento nacional, e projectos inovadores.",
-      "Também tive a oportunidade de melhorar a minha forma de trabalhar com as metodologias ágeis (SCRUM).",
+      "Colaboração em projetos de âmbito nacional, incluindo sistemas de gestão escolar e plataformas hospitalares.",
+      "Desenvolvimento com Laravel e Blade, aplicando metodologias ágeis (SCRUM) em equipa multidisciplinar.",
     ],
     tecnologies: ["Laravel", "Blade", "MySQL", "Bootstrap", "Trello"],
   },
@@ -51,28 +56,26 @@ const WorkExperience = () => {
             <li key={index} className="mb-10 ms-4">
               <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
               <time className="mb-1 text-sm font-normal leading-none text-gray-600 dark:text-gray-300">
-                {item.startDate} - {item.endDate}
+                {item.startDate} — {item.endDate}
               </time>
-              <h3 className="text-lg font-semibold text-gray-700 dark:text-white">
-                {item.companyName} | {item.jobTitle}
+              <h3 className="text-lg font-semibold text-gray-700 dark:text-white mt-1">
+                {item.companyName}
               </h3>
-              {/* <div className="mb-4 text-base font-normal text-gray-800 dark:text-gray-300">
-                <ol>
-                  {item.description.map((desc, index) => (
-                    <li key={index}>{desc}</li>
-                  ))}
-                </ol>
-              </div> */}
-              <div className="mb-4 text-base font-normal text-gray-800 dark:text-gray-300">
-                <ol className="inline-flex gap-2 flex-wrap">
-                  {item.tecnologies.map((tech, index) => (
-                    <li className="flex flex-wrap gap-1" key={index}>
-                      <div className="px-2 py-1 rounded-md border border-neutral-200 dark:border-neutral-800 bg-white/30 dark:bg-neutral-900/30 text-neutral-800 dark:text-neutral-200 backdrop-blur-sm">
-                      {tech}
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-2">{item.jobTitle}</p>
+              <ul className="mb-3 text-sm text-gray-700 dark:text-gray-300 space-y-1 list-disc list-inside">
+                {item.description.map((desc, i) => (
+                  <li key={i}>{desc}</li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-1">
+                {item.tecnologies.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 rounded-md border border-neutral-200 dark:border-neutral-800 bg-white/30 dark:bg-neutral-900/30 text-neutral-800 dark:text-neutral-200 backdrop-blur-sm text-xs"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </li>
           ))}

@@ -1,44 +1,62 @@
-My Portfolio
-This is my portfolio website developed using Next.js.
+# Eliude Francisco — Portfolio Pessoal
 
-Features
-Modern UI: Designed with the latest trends in web design.
-Responsive: Optimized for all screen sizes.
-Interactive: Engaging animations and user interactions.
-Fast: Built with performance in mind.
-Getting Started
-To get a local copy up and running, follow these steps:
+Portfolio pessoal de **Eliude Francisco**, Engenheiro de Software com foco em Inteligencia de Dados e desenvolvimento de produtos digitais B2B e B2G.
 
-Prerequisites
-Ensure you have Node.js and npm installed. You can download Node.js from here.
+**Live:** [eliudefrancisco.com](https://eliudefrancisco.com)
 
-Installation
-Clone the repo
-git clone https://github.com/eliudefrancisco14/my-portfolio.git
-Install NPM packages
+---
+
+## Sobre o Projecto
+
+Este portfolio foi construido com Next.js 15, React e TailwindCSS. Apresenta a trajetoria profissional, projectos desenvolvidos, competencias tecnicas e formas de contacto.
+
+## Stack Tecnologico
+
+| Camada | Tecnologia |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| UI | React + TailwindCSS |
+| Animacoes | Framer Motion |
+| Tipografia | Geist (Vercel) |
+| Deploy | Vercel |
+
+## Estrutura do Projecto
+
+```
+src/
+app/                  # Rotas Next.js (App Router)
+  page.tsx            # Pagina principal (home)
+  aboutme/            # Sobre mim
+  projects/           # Projectos
+  talktome/           # Contacto
+components/
+  app/                # Componentes de conteudo
+    Header.tsx        # Cabecalho com bio e redes sociais
+    Projects.tsx      # Listagem de projectos com estudos de caso
+    WorkExperience.tsx  # Experiencia profissional
+    Skills.tsx        # Competencias tecnicas
+    Education.tsx     # Formacao academica
+  ui/                 # Componentes de interface reutilizaveis
+content/              # Conteudo em Markdown
+```
+
+## Executar Localmente
+
+```bash
+# Instalar dependencias
 npm install
-Running the Development Server
-Start the development server by running:
 
+# Iniciar servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-Open http://localhost:3000 with your browser to see the result.
 
-Editing the Project
-You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
+# Build de producao
+npm run build
+```
 
-Learn More
-To learn more about Next.js, check out the following resources:
+O servidor estara disponivel em http://localhost:3000
 
-Next.js Documentation - learn about Next.js features and API.
-Learn Next.js - an interactive Next.js tutorial.
-Deployment
-The easiest way to deploy your Next.js app is using Vercel. Check out the Next.js deployment documentation for more details.
+## Contacto
 
-Contact
-Feel free to reach out with any questions or feedback!
+- **Email:** eliudefrancisco14@gmail.com
+- **LinkedIn:** [eliude-quintas-francisco](https://linkedin.com/in/eliude-quintas-francisco-7b2347252)
+- **GitHub:** [@eliudefrancisco14](https://github.com/eliudefrancisco14)
