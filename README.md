@@ -1,62 +1,39 @@
-# Eliude Francisco — Portfolio Pessoal
+# eliudefrancisco.com
 
-Portfolio pessoal de **Eliude Francisco**, Engenheiro de Software com foco em Inteligencia de Dados e desenvolvimento de produtos digitais B2B e B2G.
+Portfólio de Eliúde Francisco — Desenvolvedor de Software · Aplicações de Dados.
 
-**Live:** [eliudefrancisco.com](https://eliudefrancisco.com)
+## Stack
 
----
+- Vite + React + TypeScript + Tailwind CSS + framer-motion
+- Página inicial pré-renderizada no build (`src/entry-server.tsx` + `scripts/prerender.mjs`) para SEO e pré-visualizações de links
+- Formulário de contacto numa função da Vercel (`api/contact.ts`) que envia email pelo [Resend](https://resend.com)
+- Publicado na Vercel, domínio `eliudefrancisco.com`
 
-## Sobre o Projecto
-
-Este portfolio foi construido com Next.js 15, React e TailwindCSS. Apresenta a trajetoria profissional, projectos desenvolvidos, competencias tecnicas e formas de contacto.
-
-## Stack Tecnologico
-
-| Camada | Tecnologia |
-|---|---|
-| Framework | Next.js 15 (App Router) |
-| UI | React + TailwindCSS |
-| Animacoes | Framer Motion |
-| Tipografia | Geist (Vercel) |
-| Deploy | Vercel |
-
-## Estrutura do Projecto
-
-```
-src/
-app/                  # Rotas Next.js (App Router)
-  page.tsx            # Pagina principal (Home)
-  aboutme/            # Sobre mim
-  projects/           # Projectos
-  talktome/           # Contacto
-components/
-  app/                # Componentes de conteudo
-    Header.tsx        # Cabecalho com bio e redes sociais
-    Projects.tsx      # Listagem de projectos com estudos de caso
-    WorkExperience.tsx  # Experiencia profissional
-    Skills.tsx        # Competencias tecnicas
-    Education.tsx     # Formacao academica
-  ui/                 # Componentes de interface reutilizaveis
-content/              # Conteudo em Markdown
-```
-
-## Executar Localmente
+## Desenvolvimento
 
 ```bash
-# Instalar dependencias
 npm install
-
-# Iniciar servidor de desenvolvimento
-npm run dev
-
-# Build de producao
-npm run build
+npm run dev        # http://localhost:8080
+npm test           # testes (validação do formulário e função de contacto)
+npm run typecheck
+npm run build      # gera dist/ com a página pré-renderizada
 ```
 
-O servidor estara disponivel em http://localhost:3000
+O formulário só envia emails na Vercel (ou com `vercel dev`), porque depende da função `api/contact.ts`.
 
-## Contacto
+## Variáveis de ambiente (Vercel → Settings → Environment Variables)
 
-- **Email:** eliudepauloquintasf@gmail.com
-- **LinkedIn:** [eliude-quintas-francisco](https://linkedin.com/in/eliude-quintas-francisco-7b2347252)
-- **GitHub:** [@eliudefrancisco14](https://github.com/eliudefrancisco14)
+| Nome | Obrigatória | Descrição |
+| --- | --- | --- |
+| `RESEND_API_KEY` | Sim | Chave da API do Resend |
+| `CONTACT_TO_EMAIL` | Não | Para onde vão as mensagens (por defeito o email pessoal) |
+| `CONTACT_FROM_EMAIL` | Não | Remetente, num domínio verificado no Resend |
+
+## Onde editar o conteúdo
+
+Textos, projetos, experiência e competências estão todos em `src/data/portfolio.ts`.
+Imagens dos projetos em `public/projects/` (formato `.webp`, 1280 px de largura).
+
+## Histórico
+
+A versão anterior em Next.js está guardada no branch `legacy-nextjs`.
