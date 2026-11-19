@@ -88,7 +88,10 @@ export function buildEmail(data: ValidContact, date = new Date()) {
 <body style="margin:0;padding:0;background-color:#f2f2f7;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f2f2f7;padding:40px 16px;"><tr><td align="center">
 <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;">
-<tr><td style="padding:0 0 32px 0;text-align:center;"><p style="margin:0;font-size:15px;font-weight:600;color:#1d1d1f;">eliudefrancisco.com</p></td></tr>
+<tr><td style="padding:0 0 32px 0;text-align:center;">
+<a href="https://eliudefrancisco.com" style="text-decoration:none;color:#1d1d1f;">
+<table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto 10px auto;"><tr><td width="52" height="52" align="center" valign="middle" style="width:52px;height:52px;background-color:#1d1d1f;border-radius:14px;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.5px;color:#ffffff;line-height:52px;">EF<span style="color:#86868b;">.</span></td></tr></table>
+<p style="margin:0;font-size:15px;font-weight:600;color:#1d1d1f;">eliudefrancisco.com</p></a></td></tr>
 <tr><td style="background-color:#ffffff;border-radius:20px;box-shadow:0 2px 20px rgba(0,0,0,0.06);padding:32px;">
 <p style="margin:0 0 4px 0;font-size:13px;font-weight:500;color:#86868b;text-transform:uppercase;letter-spacing:0.8px;">Nova mensagem</p>
 <h1 style="margin:0 0 24px 0;font-size:28px;font-weight:700;color:#1d1d1f;line-height:1.2;">${name}</h1>
