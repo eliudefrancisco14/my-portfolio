@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Eliúde Francisco",
   role: "Desenvolvedor de Software · Aplicações de Dados",
   tagline: "Software · Dados · IA",
-  bio: "Desenvolvo aplicações web e soluções orientadas a dados — de APIs e integrações a dashboards e produtos com IA — que ajudam empresas e instituições a trabalhar melhor.",
+  bio: "Desenvolvo aplicações web e soluções orientadas a dados, de APIs e integrações a dashboards e produtos com IA, que ajudam empresas e instituições a trabalhar melhor.",
   aboutExtended:
     "Sou Desenvolvedor de Software na Underall, onde construo produtos digitais B2B e B2G com foco em dados, automação e IA aplicada. Antes, fui CTO na Inokri Soluções Inteligentes, onde liderei a arquitetura e o desenvolvimento das plataformas da empresa, e Desenvolvedor de Sistemas no INFOSI, em projetos de âmbito nacional. Gosto de levar uma ideia do conceito ao deploy, com código limpo e decisões baseadas em dados.",
   email: "eliudepauloquintasf@gmail.com",
@@ -30,7 +30,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "IBNN Portugal — Plataforma Digital para Igreja",
+    title: "IBNN Portugal: Plataforma Digital para Igreja",
     featured: true,
     image: "/projects/ibnn-portugal.webp",
     imageAlt: "Página inicial da plataforma IBNN Portugal com agenda e ministérios",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Supabase", "PostgreSQL", "Vercel"],
   },
   {
-    title: "SnapRead — Extração de Texto com OCR",
+    title: "SnapRead: Extração de Texto com OCR",
     featured: true,
     imageAlt: "Capa do SnapRead: ícone de digitalização de texto",
     link: "https://snapread-frontend.vercel.app/",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     technologies: ["React", "TypeScript", "Python", "FastAPI", "Tesseract OCR", "Docker"],
   },
   {
-    title: "Angofuel — Postos de Combustível em Tempo Real",
+    title: "Angofuel: Postos de Combustível em Tempo Real",
     image: "/projects/angofuel.webp",
     imageAlt: "Mapa interativo do Angofuel com postos de combustível em Angola",
     description:
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     technologies: ["Laravel", "MySQL", "Google Maps API", "Bootstrap"],
   },
   {
-    title: "Assistente Hospitalar — Consultas Online",
+    title: "Assistente Hospitalar: Consultas Online",
     image: "/projects/assistente-hospitalar.webp",
     imageAlt: "Ecrã de marcação de consultas do Assistente Hospitalar",
     code: "https://github.com/eliudefrancisco14/hospitalar",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     technologies: ["Laravel", "Blade", "MySQL", "Bootstrap"],
   },
   {
-    title: "School Management — Gestão Escolar",
+    title: "School Management: Gestão Escolar",
     image: "/projects/school-management.webp",
     imageAlt: "Painel do sistema School Management com turmas e notas",
     description:
@@ -100,23 +100,23 @@ export const experiences: Experience[] = [
   {
     role: "Desenvolvedor de Software (Dados & IA)",
     company: "Underall",
-    period: "Dez 2024 — Presente",
+    period: "Dez 2024 - Presente",
     description:
       "Desenvolvimento de produtos digitais B2B e B2G com foco em dados e automação: APIs em Python/FastAPI e .NET, integração com SQL Server, implementação e customização de Odoo para clientes empresariais.",
   },
   {
     role: "CTO & Desenvolvedor Fullstack",
     company: "Inokri Soluções Inteligentes",
-    period: "Set 2023 — Dez 2024",
+    period: "Set 2023 - Dez 2024",
     description:
       "Liderança técnica: definição da arquitetura e stack, desenvolvimento de plataformas web com Vue.js/Next.js e .NET, e gestão de bases de dados SQL Server para clientes empresariais.",
   },
   {
     role: "Desenvolvedor de Sistemas (Estágio)",
     company: "INFOSI",
-    period: "Mar 2023 — Jul 2023",
+    period: "Mar 2023 - Jul 2023",
     description:
-      "Participação em projetos de âmbito nacional — gestão escolar e plataformas hospitalares — com Laravel, em equipa ágil (SCRUM).",
+      "Participação em projetos de âmbito nacional, como gestão escolar e plataformas hospitalares, com Laravel, em equipa ágil (SCRUM).",
   },
 ];
 
@@ -139,12 +139,12 @@ export const education = [
   {
     degree: "Engenharia Informática",
     school: "INSTIC",
-    period: "2023 — Presente",
+    period: "2023 - Presente",
   },
   {
-    degree: "Ensino Médio — Tecnologia da Informação",
+    degree: "Ensino Médio em Tecnologia da Informação",
     school: "ITEL",
-    period: "2019 — 2023",
+    period: "2019 - 2023",
   },
 ];
 

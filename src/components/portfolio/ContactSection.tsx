@@ -92,7 +92,7 @@ const ContactSection = () => {
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="text-[17px] text-muted-foreground mb-4 max-w-md mx-auto text-center">
-            Tem um projeto, uma ideia ou um desafio com dados? Conte-me — respondo normalmente em 24–48 horas.
+            Tem um projeto, uma ideia ou um desafio com dados? Conte-me. Respondo normalmente em 24 a 48 horas.
           </p>
           <p className="text-[15px] text-muted-foreground mb-10 text-center">
             Prefere escrever diretamente?{" "}

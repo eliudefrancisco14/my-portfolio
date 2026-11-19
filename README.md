@@ -1,6 +1,6 @@
 # eliudefrancisco.com
 
-Portfólio de Eliúde Francisco — Desenvolvedor de Software · Aplicações de Dados.
+Portfólio de Eliúde Francisco, Desenvolvedor de Software · Aplicações de Dados.
 
 ## Stack
 

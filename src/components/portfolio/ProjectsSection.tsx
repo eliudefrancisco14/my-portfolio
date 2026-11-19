@@ -26,7 +26,7 @@ const ProjectCover = ({ project, featured }: { project: Project; featured: boole
       <div className="relative flex flex-col items-center gap-3 text-foreground/70">
         <ScanText className={featured ? "w-16 h-16" : "w-12 h-12"} strokeWidth={1.25} aria-hidden="true" />
         <span className="font-display font-semibold tracking-tight text-[20px] text-foreground/80">
-          {project.title.split(" — ")[0]}
+          {project.title.split(": ")[0]}
         </span>
       </div>
     </div>

@@ -60,7 +60,7 @@ const Navbar = () => {
           href="#home"
           onClick={(e) => scrollTo(e, "#home")}
           className="font-display font-semibold text-foreground tracking-tight text-[17px] rounded"
-          aria-label="Eliúde Francisco — início"
+          aria-label="Eliúde Francisco, início"
         >
           EF<span className="text-muted-foreground">.</span>
         </a>
